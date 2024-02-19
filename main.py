@@ -43,8 +43,12 @@ class Auto:
         original = False
         if (self.registro == self.motor.registro):
             original = True
+            asientosvalidos = []
             for i in range(0, len(self.asientos)):
-                if (self.registro != self.asientos[i].registro):
+                if (type(self.asientos[i]) == Asiento):
+                    asientosvalidos.append(i)
+            for i in range(0, len(asientosvalidos)):
+                if (self.registro != self.asientos[i]):
                     original = False
         if (original == True):
             return "Auto original"
