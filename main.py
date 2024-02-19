@@ -33,7 +33,11 @@ class Auto:
         Auto.cantidadCreados += 1
     
     def cantidadAsientos(self):
-        return len(self.asientos)
+        cantidad = 0
+        for i in range(0, len(self.asientos)):
+            if (type(self.asientos[i]) == Asiento):
+                cantidad += 1
+        return cantidad
     
     def verificarIntegridad(self):
         original = False
